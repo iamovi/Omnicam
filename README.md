@@ -1,6 +1,8 @@
-# Omnicam
+## Omnicam
 
-A Browser based Camera App.
+**Omnicam** is a browser-based camera application built with modern web technologies.
+
+Built with TypeScript (95+% of the codebase)
 
 ![Omnicam Preview](./omnicam.jpg)
 
