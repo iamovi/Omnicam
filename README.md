@@ -1,21 +1,21 @@
-## Omnicam
+## CheesePlz
 
-**Omnicam** is a browser-based camera application built with modern web technologies.
+**CheesePlz** is a browser-based camera application built with modern web technologies.
 
 Built with TypeScript (95+% of the codebase)
 
-![Omnicam Preview](./omnicam.jpg)
+![CheesePlz Preview](./cheeseplz.jpg)
 
 ## App (Coming Soon)
 
-***A Cloud based Omnicam ( Browser Camera App) will be released soon, it's under development, it will available soon here. Estimated release date is End of February 2026.***
+***A Cloud based CheesePlz ( Browser Camera App) will be released soon, it's under development, it will available soon here. Estimated release date is End of February 2026.***
 
 ## Use locally
 
 1. Clone the repository
 
     ```bash
-    git clone https://github.com/iamovi/omnicam.git
+    git clone https://github.com/iamovi/CheesePlz.git
     ```
 
 2. Install dependencies: `npm install`
@@ -24,7 +24,7 @@ Built with TypeScript (95+% of the codebase)
 After runing `npm run dev` in your terminal, you will see a message like this:
 
 ```bash
-> omnicam@1.0.0 dev
+> cheeseplz@1.0.0 dev
 > vite
 
 
