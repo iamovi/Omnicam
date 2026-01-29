@@ -8,7 +8,7 @@ Built with TypeScript (95+% of the codebase)
 
 ## App (Coming Soon)
 
-***A Cloud based Omnican ( Browser Camera App) will be released soon, it's under development, it will available soon here. Estimated release date is Last of February 2026.***
+***A Cloud based Omnicam ( Browser Camera App) will be released soon, it's under development, it will available soon here. Estimated release date is End of February 2026.***
 
 ## Use locally
 
@@ -35,7 +35,7 @@ After runing `npm run dev` in your terminal, you will see a message like this:
   ➜  press h + enter to show help
 ```
 
-Now you can access the app at (Open your browser and go to):
+Now, Open your browser and go to:
 
 ```bash
 http://localhost:8080/
