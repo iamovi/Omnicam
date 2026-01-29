@@ -29,7 +29,7 @@ After runing `npm run dev` in your terminal, you will see a message like this:
   VITE v7.3.1  ready in 771 ms
 
   ➜  Local:   http://localhost:8080/
-  ➜  Network: (your network ip.....)
+  ➜  Network: http://<your-local-ip>:8080/
   ➜  press h + enter to show help
 ```
 
