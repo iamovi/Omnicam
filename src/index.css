@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Camera App Design System - Monochrome Elegance */
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 0% 25%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 100%;
+
+    --radius: 0.75rem;
+
+    /* Camera-specific tokens */
+    --camera-overlay: 0 0% 0% / 0.6;
+    --camera-control-bg: 0 0% 0% / 0.4;
+    --camera-control-hover: 0 0% 100% / 0.1;
+    --capture-ring: 0 0% 100%;
+    --capture-inner: 0 0% 100%;
+    --flash-active: 48 96% 53%;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 0 0% 25%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+@layer utilities {
+  .camera-control {
+    @apply flex items-center justify-center rounded-full transition-all duration-200;
+    background: hsl(var(--camera-control-bg));
+    backdrop-filter: blur(10px);
+  }
+
+  .camera-control:hover {
+    background: hsl(var(--camera-control-hover));
+  }
+
+  .camera-control:active {
+    transform: scale(0.95);
+  }
+
+  .capture-button {
+    @apply relative flex items-center justify-center;
+  }
+
+  .capture-button::before {
+    content: '';
+    @apply absolute rounded-full border-4;
+    border-color: hsl(var(--capture-ring));
+    width: 72px;
+    height: 72px;
+  }
+
+  .capture-button-inner {
+    @apply rounded-full transition-all duration-150;
+    background: hsl(var(--capture-inner));
+    width: 58px;
+    height: 58px;
+  }
+
+  .capture-button:active .capture-button-inner {
+    transform: scale(0.9);
+  }
+
+  .flash-active {
+    color: hsl(var(--flash-active));
+  }
+
+  .viewfinder-grid {
+    background-image: 
+      linear-gradient(hsl(0 0% 100% / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(0 0% 100% / 0.1) 1px, transparent 1px);
+    background-size: 33.33% 33.33%;
+  }
+
+  .gallery-thumbnail {
+    @apply relative overflow-hidden rounded-lg cursor-pointer transition-transform duration-200;
+  }
+
+  .gallery-thumbnail:hover {
+    transform: scale(1.05);
+  }
+
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.3);
+      opacity: 0;
+    }
+  }
+
+  .recording-pulse::after {
+    content: '';
+    @apply absolute rounded-full;
+    width: 80px;
+    height: 80px;
+    border: 2px solid hsl(var(--destructive));
+    animation: pulse-ring 1.5s ease-out infinite;
+  }
+
+  @keyframes flash {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  .flash-overlay {
+    animation: flash 0.2s ease-out forwards;
+  }
+}
